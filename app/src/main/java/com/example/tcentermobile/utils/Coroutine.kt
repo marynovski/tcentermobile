@@ -16,8 +16,11 @@ class Coroutine {
             con.requestMethod = "POST"
             con.setRequestProperty("Content-Type", "application/json; utf-8")
             con.setRequestProperty("Accept", "application/json")
+            con.setRequestProperty("Authorization", "7f137082d82368af5968aac4150b3854644b5957")
             con.doOutput = true
             var jsonInputString: String = json
+
+            println(jsonInputString)
 
             con.outputStream.use { os ->
                 val input = jsonInputString.toByteArray(charset("utf-8"))

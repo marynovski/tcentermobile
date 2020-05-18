@@ -11,7 +11,7 @@ import com.example.tcentermobile.utils.Coroutine
 class RequestService {
 
     fun sendLoginPostRequest(json: String): String {
-        val url: String = "http://192.168.1.4/tcenterapi/api.php"
+        val url: String = "http://www.tcenter.pl/api/v/mobile/login"
         val courotine: Coroutine = Coroutine()
 
         return courotine.loginRequestCouroutine(json, url)
