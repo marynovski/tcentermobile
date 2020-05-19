@@ -10,6 +10,8 @@
     <string name="sendSms">Send SMS</string>
     <string name="showPass">SHOW</string>
     <string name="hidePass">HIDE</string>
+    <string name="plusCross">+</string>
+    <string name="toDo">To do</string>
     <string-array name="spinnerItems">
         <item>+48</item>
         <item>+32</item>

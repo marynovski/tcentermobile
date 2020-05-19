@@ -21,7 +21,7 @@ class LoginService {
     fun login(username: String, password: String, preferences: SharedPreferences, context: Context)
     {
 
-        val jsonRequestString: String = "{\"username\":\"$username\",\"password\":\"$password\"}"
+        val jsonRequestString: String = "{\"params\":{\"username\":\"dima\",\"password\":\"dima\"}}"
         val rs: RequestService = RequestService()
         val jsonResponseString: String = rs.sendLoginPostRequest(jsonRequestString)
         var jsonResponse: JSONObject = JSONObject("{}")
@@ -36,7 +36,6 @@ class LoginService {
         println(jsonResponse.getString("json"))
 
         val json: JSONObject      = JSONObject(jsonResponse.getString("json"))
-        val user_data: JSONArray  = JSONArray(json.getString("user_data"))
         val status: JSONObject    = JSONObject(json.getString("status"))
         val code: String          = status.getString("code")
         val message: String       = status.getString("message")
@@ -50,6 +49,7 @@ class LoginService {
             }
             "1" -> {
                 println("$code : $message")
+                val user_data: JSONObject  = JSONObject(json.getString("user_data"))
             }
             else -> { // Note the block
                 print("x is neither 1 nor 2")
